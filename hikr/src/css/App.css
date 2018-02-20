@@ -3,12 +3,13 @@
 }
 
 .mainImg {
-  height: 100px;
+  height: auto;
+  padding-bottom: 20px;
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 300px;
   padding: 20px;
   color: white;
 }
