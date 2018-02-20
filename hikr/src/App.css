@@ -2,9 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 1s linear;
-  height: 80px;
+.mainImg {
+  height: 100px;
 }
 
 .App-header {
