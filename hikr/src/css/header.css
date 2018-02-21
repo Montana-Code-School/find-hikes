@@ -1,15 +1,35 @@
-@font-face {
-    font-family: 'brave_mountainsregular';
-    src: url('bravemountains-webfont.woff2') format('woff2'),
-         url('bravemountains-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 
-}
+
 body {
   background-color: darkseagreen;
 }
 h1 {
-  font-size: 160px;
-  font-family: 'brave_mountainsregular', sans-serif;
+  font-size: 100px;
+  font-family: terminal, sans-serif;
+}
+#main {
+  width: 100%;
+  border: 0;
+  z-index: 0;
+}
+.button {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:1;
+}
+.difficulty {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  z-index:5;
+}
+.hikeLength {
+  position: absolute;
+  top: 40%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  z-index:6;
 }
