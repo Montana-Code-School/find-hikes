@@ -5,13 +5,14 @@ import Droopdown1 from "./dropdown1.js";
 import Droopdown2 from "./dropdown2.js";
 
 class GoButton extends Component{
+  constructor(props){
+    super(props);
+  }
   render(){
-    const imgClick = ()=> {
-      console.log(Droopdown1);
-    };
+
     return(
       <div>
-        <img id="hikebutton" src={SearchFull} onClick = {() => imgClick()}/>
+        <img id="hikebutton" src={SearchFull} onClick = {this.props.imgClick()}/>
       </div>
     );
   }
