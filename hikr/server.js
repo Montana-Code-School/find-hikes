@@ -36,6 +36,7 @@ router.route('/hikes')
     hike.location = req.body.location;
     hike.difficulty = req.body.difficulty;
     hike.description = req.body.description;
+    hike.lengthKey = req.body.lengthKey;
     hike.save(err => {
       console.log("saved");
       if(err) {
@@ -71,6 +72,7 @@ router.route('/hikes/:hike_id')
       hike.location = req.body.location;
       hike.difficulty = req.body.difficulty;
       hike.description = req.body.description;
+      hike.lengthKey = req.body.lengthKey;
       hike.save(err =>{
         if(err)
           res.send(err);

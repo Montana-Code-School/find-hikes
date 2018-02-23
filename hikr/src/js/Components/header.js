@@ -13,26 +13,19 @@ export default class Header extends Component {
     this.state = {
       ddval1: "",
       ddval2: "",
-      buttonReturn: "",
-    };
 
+    };
   }
   onChange1 = (miles) => {
-    this.setState({
-      ddval1: miles,
-    })
-  }
-  onChange2 = (difficulty) => {
-    this.setState({
-      ddval2: difficulty,
-    })
-  }
-  imgClick2 = (returnData) => {
-    this.setState({
-      buttonReturn: returnData,
-    })
-  }
-
+     this.setState({
+       ddval1: miles,
+     })
+   }
+   onChange2 = (difficulty) => {
+     this.setState({
+       ddval2: difficulty,
+     })
+   }
   render() {
     return (<div className="App-header">
       <h1 className="aha">
@@ -40,10 +33,9 @@ export default class Header extends Component {
       </h1>
       <div className="container">
         <img id= "main" src={mainImg} alt="Zoo Town"/>
-        <div className="button"><GoButton passedMiles={this.state.ddval1} passedDiff={this.state.ddval2} onClick={this.imgClick2}/></div>
+        <div className="button"><GoButton passedMiles={this.state.ddval1} passedDiff={this.state.ddval2}/></div>
         <div className="hikeLength"><Droopdown1 onChange={this.onChange1}/></div>
         <div className="difficulty"><Droopdown2 onChange={this.onChange2}/></div>
-        <div className="returnField"><ReturnField passedReturn={this.state.buttonReturn}/></div>
       </div>
     </div>);
   }

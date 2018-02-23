@@ -6,26 +6,37 @@ class GoButton extends Component{
   constructor(){
     super();
     this.state = {
-      buttonReturn : ""
+      hikes : []
     };
   }
-  update = (e) => {
-    this.props.onClick(e.value);
-    this.setState({
-      buttonReturn: e.value
-    });
-  }
-  imgClick = ()=> {
-   console.log(this.props.passedDiff);
-   console.log(this.props.passedMiles);
-
- }
   render(){
-
+    const imgClick = ()=> {
+      console.log(this.props.passedDiff + " " + this.props.passedMiles);
+      fetch('http://localhost:8080/api/hikes')
+        .then(results => {
+          return results.json();
+        }).then(data => {
+          let hikesReturn = data.map((hikes) => {
+            if (this.props.passedDiff == hikes.difficulty && this.props.passedMiles == hikes.lengthKey){
+              return(
+                <div key = {hikes.results}>
+                  <h1> {hikes.name}, {hikes.length}, {hikes.difficulty} </h1>
+                  <h2> {hikes.location}</h2>
+                  <h4> {hikes.description}</h4>
+                </div>
+              )
+            }
+          })
+          this.setState({hikes: hikesReturn});
+        })
+    }
     return(
       <div>
         <div>
-          <img id="hikebutton" src={SearchFull} onClick = {this.update, this.imgClick}value= {this.state.buttonReturn}/>
+          <img id="hikebutton" src={SearchFull} onClick = {() => imgClick()}/>
+        </div>
+        <div className='container2' id='returnField'>
+          <div className='container1'>{this.state.hikes}</div>
         </div>
       </div>
     );

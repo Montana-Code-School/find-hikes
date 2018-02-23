@@ -6,6 +6,7 @@ const hikesSchema = new Schema({
   location: String,
   difficulty: String,
   description: String,
+  lengthKey: String,
 });
 
 module.exports = mongoose.model('hikes', hikesSchema);
