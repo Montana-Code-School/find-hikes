@@ -6,13 +6,25 @@ const options = [
   'Blue',
   'Black'
 ];
-const defaultOption = options[0];
 
 class Droopdown2 extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      ddval2: "",
+    };
+  }
+  update = (e) => {
+    console.log(e.value);
+    this.props.onChange(e.value);
+    this.setState({
+      ddval2: e.value
+    });
+  }
   render() {
     return(
       <div>
-        <Dropdown options={options} onChange={this._onSelect} value={defaultOption} placeholder="Ima placholder..."/>
+        <Dropdown options={options} onChange={this.update} value={this.state.ddval2}/>
       </div>
     );
   }
