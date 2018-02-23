@@ -6,7 +6,6 @@ import GoButton from "./button.js";
 import Droopdown1 from "./dropdown1.js";
 import Droopdown2 from "./dropdown2.js";
 import ReturnField from "./returnField.js";
-import Shorthikes from "./hikes/shorthike.js";
 
 export default class Header extends Component {
   constructor(props){
@@ -14,6 +13,7 @@ export default class Header extends Component {
     this.state = {
       ddval1: "",
       ddval2: "",
+
     };
   }
   onChange1 = (miles) => {
