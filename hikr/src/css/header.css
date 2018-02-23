@@ -21,14 +21,14 @@ h1 {
 } */
 .difficulty {
   position: absolute;
-  top: 40%;
+  top: 43%;
   left: 25%;
   transform: translate(-50%, -50%);
   z-index:5;
 }
 .hikeLength {
   position: absolute;
-  top: 40%;
+  top: 43%;
   left: 75%;
   transform: translate(-50%, -50%);
   z-index:6;
